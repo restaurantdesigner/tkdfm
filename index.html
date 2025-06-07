@@ -1,0 +1,2835 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TKD Fitness Manager – Turnkey solutions for fully equipped fitness clubs
+Design • Lighting • Interior • Equipment
+24/7 Access • Online payment & booking
+Franchise-ready solutions for business scaling
+Proven business model with cost optimization
+
+ </title>
+  <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+
+
+  <!-- favicon для PNG -->
+  <link rel="icon" type="image/png" href="img/fv.png">
+
+
+
+
+
+
+
+
+  <style>
+    /* ✅ ОБЩИЙ стиль (для десктопа и всех) */
+    .footnote {
+      font-family: 'Lato', sans-serif;
+      font-size: 0.6rem;
+      opacity: 0.65;
+      line-height: 1.5;
+      max-width: 85vw;
+      margin-top: 1rem;
+      white-space: normal;
+      word-break: break-word;
+    }
+
+
+
+
+    /* ✅ ТОЛЬКО для мобильных */
+    @media (max-width: 767px) {
+      .footnote {
+        font-size: 0.45rem;
+        max-width: 90vw;
+      }
+    }
+
+    .footnote a {
+      color: #66ccff;
+      text-decoration: underline;
+      font-weight: 500;
+    }
+
+
+    section#hero {
+      overflow: visible;
+    }
+
+
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      font-family: 'Staatliches', sans-serif;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    section {
+      height: 100vh;
+      position: relative;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      scroll-snap-align: start;
+    }
+
+    body {
+      scroll-snap-type: y mandatory;
+    }
+
+    body {
+      background-color: #ffffff !important;
+      color: #000000 !important;
+    }
+
+    .spacer {
+      height: 20vh;
+    }
+
+    .video-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -2;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: -1;
+    }
+
+    .content {
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding-top: 10vh;
+      min-height: 100vh;
+      box-sizing: border-box;
+    }
+
+
+
+    .logo {
+      width: 40vw;
+      max-width: 300px;
+    }
+
+    .cta-button {
+      margin-top: 20px;
+      padding: 12px 32px;
+      font-size: 1.3rem;
+      font-family: 'Staatliches', sans-serif;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      background-color: transparent;
+      color: white;
+      border: 0.5px solid white;
+      border-radius: 40px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .cta-button:hover {
+      background-color: white;
+      color: black;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      padding: 40px 20px;
+      background: #f8cfff;
+    }
+
+    .gallery img {
+      width: 200px;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .form-section {
+      background: transparent;
+      color: #222;
+      padding: 00px 00px;
+      text-align: left;
+    }
+
+    form input,
+    form textarea {
+      width: 100%;
+      padding: 0.75em 1em;
+      background: #f9f9f9;
+      border-radius: 8px;
+      border: 1px solid transparent;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.9rem;
+      transition: all 0.2s ease;
+      margin-bottom: 0.5em;
+      box-sizing: border-box;
+    }
+
+    form input:hover,
+    form textarea:hover {
+      border-color: #ccc;
+      background: #f1f1f1;
+    }
+
+    form button {
+      background: black;
+      color: white;
+      border: none;
+      padding: 10px 30px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    #lang-toggle {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      background: white;
+      color: black;
+      padding: 4px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 80pt;
+      background: linear-gradient(90deg, #ff98ec, #050ba3, 0.5) padding: 10px 20px;
+      z-index: 999;
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: linear-gradient(45deg, #ff98ec, #050ba3);
+      color: white;
+      text-align: center;
+      padding: 15px 10px;
+      z-index: 999;
+      font-family: 'Lato', sans-serif;
+    }
+
+
+    header {
+      top: 0;
+      justify-content: space-between;
+    }
+
+    header img {
+      height: 80px;
+    }
+
+    .lang-select {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-right: 10px;
+      direction: ltr;
+    }
+
+    .lang-select button {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 0.9rem;
+      cursor: pointer;
+      font-weight: bold;
+      opacity: 0.6;
+      transition: all 0.3s ease;
+    }
+
+    .lang-select button.active {
+      opacity: 1;
+      transform: scale(1.2);
+      text-decoration: underline;
+    }
+
+
+    .button-block {
+      margin-bottom: 6vh;
+    }
+
+    .text-wrapper {
+      margin-top: 12vh;
+      /* 👈 Добавляем это */
+      margin-left: 5vw;
+      margin-right: 5vw;
+      text-align: left;
+      max-width: 90vw;
+      /* 👈 Можно добавить, чтобы было как inline */
+    }
+
+
+    .text-wrapper2 {
+      margin-left: 5vw;
+      margin-right: 5vw;
+      text-align: left;
+      max-width: 90vw;
+      margin-top: 30vh;
+    }
+
+    hero-title {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+
+    .hero-subtitle {
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+      color: aqua;
+    }
+
+    @media (min-width: 768px) {
+      .hero-title {
+        font-size: 2.5rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1.3rem;
+        color: #00e2ff;
+      }
+    }
+
+    .fade {
+      opacity: 1;
+      transition: opacity 0.9s ease-in-out;
+    }
+
+    .fade-out {
+      opacity: 0;
+    }
+
+    .site-title-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-left: 5vw;
+    }
+
+    /* На десктопе — чуть меньше отступ */
+    @media (min-width: 768px) {
+      .site-title-wrapper {
+        margin-left: 40px;
+      }
+    }
+
+    .site-title {
+      font-family: 'Staatliches', sans-serif;
+      font-size: 1.3rem;
+      color: white;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .site-subtitle {
+      font-family: 'Staatliches', sans-serif;
+      font-size: 0.6rem;
+      color: rgb(58, 193, 255);
+      opacity: 0.7;
+      margin-top: 0.5px;
+      letter-spacing: 0.5px;
+      text-align: left;
+    }
+
+
+
+
+
+
+    .logo-spacer {
+      width: 100%;
+      height: 15vh;
+      /* такой же как .logo-container в #hero */
+      margin-bottom: 30px;
+      /* как у .logo-container */
+    }
+
+
+
+
+    #sec2 .content {
+      align-items: flex-start;
+      text-align: left;
+    }
+
+    #sec2 .text-wrapper {
+      margin-left: 5vw;
+      margin-right: 5vw;
+      text-align: left;
+    }
+
+    body {
+      font-family: 'Staatliches', sans-serif;
+      text-transform: uppercase;
+      font-size: 0.6rem;
+    }
+
+    h1,
+    h2,
+    .hero-title {
+      font-family: 'Staatliches', sans-serif;
+    }
+
+    @media (max-width: 767px) {
+      .hero-title {
+        font-size: 2rem !important;
+        /* Принудительно увеличим */
+        line-height: 1.2;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .text-wrapper2 {
+        margin-left: 10vw;
+        /* было 5vw, можно 6vw–10vw */
+        margin-right: 5vw;
+        max-width: 60vw;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .text-wrapper2 {
+        margin-left: 40px;
+        margin-right: 5vw;
+        max-width: 700px;
+      }
+    }
+
+
+
+
+
+
+
+
+    #close-panel {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 2rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    #panel-backdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    #panel-backdrop.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+
+    .side-content {
+      margin-top: 60px;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    #side-panel {
+      position: fixed;
+      top: 0;
+      right: -50%;
+      width: 50%;
+      height: 100%;
+      background-color: white;
+      color: black;
+      z-index: 1001;
+      transition: right 0.4s ease;
+      box-shadow: -2px 0 8px rgba(0, 0, 0, 0.3);
+      padding: 20px;
+    }
+
+    #side-panel.open {
+      right: 0;
+    }
+
+    /* 👇 Мобильный: 90% ширины */
+    @media (max-width: 767px) {
+      #side-panel {
+        width: 90%;
+        right: -90%;
+      }
+
+      #side-panel.open {
+        right: 0;
+      }
+    }
+
+    .cookie-banner {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: #f9f9f9;
+      border-top: 1px solid #ccc;
+      padding: 20px;
+      font-size: 0.9rem;
+      z-index: 9999;
+      transform: translateY(100%);
+      transition: transform 0.4s ease;
+      box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .cookie-banner.show {
+      transform: translateY(0%);
+    }
+
+    .cookie-content {
+      max-width: 960px;
+      margin: 0 auto;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .cookie-content a {
+      color: #007aff;
+      text-decoration: none;
+    }
+
+    .cookie-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .cookie-buttons button {
+      padding: 10px 18px;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      font-family: 'Lato', sans-serif;
+    }
+
+    #accept-cookies {
+      background: black;
+      color: white;
+    }
+
+    #config-cookies {
+      background: #eee;
+      color: #333;
+    }
+
+    #reject-cookies {
+      background: transparent;
+      color: #999;
+      border: 1px solid #ccc;
+    }
+
+    /* Modal */
+    #cookie-modal {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.8);
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      padding: 30px;
+      width: 90%;
+      max-width: 400px;
+      z-index: 10001;
+      display: none;
+      transition: transform 0.3s ease;
+    }
+
+    #cookie-modal.show {
+      display: block;
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    #cookie-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 10000;
+      display: none;
+    }
+
+    #cookie-overlay.show {
+      display: block;
+    }
+
+    .modal-buttons {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.5);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 10000;
+    }
+
+    .modal-content {
+      background: white;
+      width: 90%;
+      max-width: 700px;
+      max-height: 90vh;
+      padding: 30px;
+      border-radius: 8px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .modal-scroll {
+      overflow-y: auto;
+      max-height: 60vh;
+      font-size: 0.9rem;
+      color: #333;
+      line-height: 1.5;
+    }
+
+    .modal a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .modal a:hover {
+      text-decoration: underline;
+    }
+
+    .cookie-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.5);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      padding: 20px;
+    }
+
+    .cookie-modal.show {
+      display: flex;
+    }
+
+    .cookie-modal-content {
+      background: #fff;
+      padding: 30px;
+      border-radius: 16px;
+      max-width: 500px;
+      width: 100%;
+      font-family: 'Roboto', sans-serif;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .cookie-modal-content h2 {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+      color: #111;
+    }
+
+    .modal-desc {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+
+
+
+
+    .cookie-option {
+      margin-bottom: 20px;
+      font-size: 0.9rem;
+      color: #333;
+      line-height: 1.3;
+    }
+
+    .cookie-option input[type="checkbox"] {
+      transform: scale(1.2);
+      margin-right: 10px;
+    }
+
+    .modal-buttons {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .save-btn,
+    .cancel-btn {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 0.9rem;
+    }
+
+    .save-btn {
+      background-color: black;
+      color: white;
+    }
+
+    .cancel-btn {
+      background-color: transparent;
+      border: 1px solid #ccc;
+      color: #333;
+    }
+
+    .spacer {
+      height: 20vh;
+      background: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .spacer-inner {
+      width: 100%;
+      max-width: 1000px;
+      padding: 10px 20px;
+      text-align: center;
+    }
+
+    .spacer-title {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+      font-family: 'Staatliches', sans-serif;
+      letter-spacing: 1px;
+    }
+
+    .icon-line-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .icon-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex: 0 0 auto;
+      width: 90px;
+    }
+
+    .icon-block img {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+    }
+
+    .icon-block span {
+      font-size: 0.7rem;
+      font-family: 'Lato', sans-serif;
+      text-transform: uppercase;
+      margin-top: 5px;
+    }
+
+
+    .line {
+      flex-grow: 1;
+      height: 2px;
+      background: #999;
+      min-width: 20px;
+      max-width: 100px;
+      transition: all 0.3s ease;
+    }
+
+    @media (max-width: 768px) {
+      .line {
+        max-width: 30px;
+      }
+
+      .icon-block {
+        width: 70px;
+      }
+
+      .icon-block img {
+        width: 32px;
+        height: 32px;
+      }
+
+      .icon-block span {
+        font-size: 0.65rem;
+      }
+    }
+
+
+    .modal-oferta {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: 2000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+    }
+
+    .video-bg,
+    .overlay {
+      pointer-events: none;
+    }
+
+
+
+
+    .modal-content {
+      background: white;
+      color: #222;
+      padding: 30px 20px;
+      max-width: 90vw;
+      max-height: 80vh;
+      overflow-y: auto;
+      border-radius: 12px;
+      font-family: 'Lato', sans-serif;
+      line-height: 1.5;
+      position: relative;
+    }
+
+    .modal-content h2 {
+      margin-top: 0;
+      font-family: 'Staatliches', sans-serif;
+      text-transform: uppercase;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 10px;
+      right: 16px;
+      background: none;
+      border: none;
+      font-size: 2rem;
+      cursor: pointer;
+    }
+
+    .footnote-block {
+      margin-top: 10vh;
+      /*   расстояние от кнопки */
+      margin-bottom: 5%;
+      /* расстояние до низа экрана */
+    }
+
+    .footnote+.footnote {
+      margin-top: 0.1rem;
+      /* расстояние между строками */
+    }
+
+    .custom-checkbox-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5em;
+      margin-top: 1em;
+    }
+
+    .custom-checkbox {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.9rem;
+      user-select: none;
+      position: relative;
+      padding-left: 30px;
+    }
+
+    .custom-checkbox input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    .custom-checkbox .checkmark {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 20px;
+      width: 20px;
+      background-color: white;
+      border: 2px solid #999;
+      border-radius: 50%;
+      transition: all 0.2s ease;
+    }
+
+    .custom-checkbox input:checked~.checkmark {
+      background-color: #111;
+      border-color: #111;
+    }
+
+    .custom-checkbox .checkmark::after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+
+    .custom-checkbox input:checked~.checkmark::after {
+      display: block;
+    }
+
+    .custom-checkbox .checkmark::after {
+      left: 6px;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: white;
+    }
+
+    .form-grid {
+      display: grid;
+      gap: 0.02rem;
+      grid-template-columns: 1fr;
+      /* по умолчанию — 1 колонка */
+    }
+
+    @media (min-width: 600px) {
+      .form-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* планшеты — 2 колонки */
+      }
+    }
+
+    @media (min-width: 960px) {
+      .form-grid {
+        grid-template-columns: repeat(3, 1fr);
+        /* десктоп — 3 колонки */
+      }
+
+      .form-grid.four-cols {
+        grid-template-columns: repeat(4, 1fr);
+        /* если нужно 4 в ряд */
+      }
+    }
+
+    .form-grid label {
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+      margin-bottom: 0.3em;
+      /* было 0.5em или 1em — уменьшаем */
+      padding: 0.5em 0.75em;
+      /* можно немного сократить внутренний отступ */
+      padding: 0.75em 1em;
+      background: #f9f9f9;
+      border-radius: 8px;
+      font-family: 'Lato', sans-serif;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: all 0.2s ease;
+    }
+
+    .form-grid label:hover {
+      border-color: #ccc;
+      background: #f1f1f1;
+    }
+
+    body.modal-open {
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Блокировка фоновой прокрутки */
+    body.modal-open {
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Затемнение заднего плана */
+    #panel-backdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 1000;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease;
+    }
+
+    #panel-backdrop.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* Панель */
+    #side-panel {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 90%;
+      height: 100vh;
+      background-color: white;
+      color: black;
+      z-index: 1001;
+      transition: right 0.4s ease;
+      box-shadow: -2px 0 8px rgba(0, 0, 0, 0.3);
+      display: flex;
+      flex-direction: column;
+      progress-container overflow: hidden;
+    }
+
+    #side-panel.open {
+      right: 0;
+    }
+
+    @media (min-width: 768px) {
+      #side-panel {
+        width: 50%;
+        right: -50%;
+      }
+
+      #side-panel.open {
+        right: 0;
+      }
+    }
+
+    /* Контент внутри панели */
+    .side-content {
+      overflow-y: auto;
+      flex-grow: 1;
+      padding: 20px 20px 40px 20px;
+      box-sizing: border-box;
+      -webkit-overflow-scrolling: touch;
+      min-height: 0;
+      position: relative;
+      /* ← это нужно для sticky-работы */
+      padding-top: 0;
+      /* было 20px */
+    }
+
+
+
+
+    /* Кнопка закрытия */
+    #close-panel {
+      background: none;
+      border: none;
+      font-size: 24px;
+      align-self: flex-end;
+      margin: 10px;
+      cursor: pointer;
+    }
+
+
+
+
+
+
+
+
+
+
+    .form-intro h2 {
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #222;
+    }
+
+
+
+
+
+      {
+      height: 10px;
+      widt.progress-barh: 0%;
+      background: linear-gradient(90deg, #66ccff, #f35ca3);
+      transition: width 0.3s ease;
+    }
+
+
+
+
+    .form-wrapper {
+      padding-top: 120px;
+    }
+
+    .sticky-header {
+      position: sticky;
+      margin-top: 0 !important;
+      top: 0;
+      background: white;
+      z-index: 10;
+      padding: 0px 0px;
+      box-shadow: none;
+      /* убираем тень */
+
+    }
+
+
+
+
+
+
+    .progress-wrapper {
+      margin-bottom: 20px;
+    }
+
+    .progress-text {
+      font-size: 0.75rem;
+      text-align: center;
+      color: #555;
+      font-family: 'Lato', sans-serif;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+      /* 👈 отступ от текста до полосы */
+    }
+
+    .progress-container {
+      position: relative;
+      height: 10px;
+      background: #eee;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    .progress-bar {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #66ccff, #f35ca3);
+      transition: width 0.3s ease;
+    }
+
+    @media (max-width: 767px) {
+      .progress-text {
+        font-size: 0.65rem;
+        margin-bottom: 4px;
+      }
+
+      .progress-container {
+        height: 8px;
+      }
+    }
+
+    .ai-brand-section {
+      background-color: #ffdbe9;
+      /* нежно-розовый фон */
+      padding: 100px 20px;
+      text-align: center;
+      color: #111;
+    }
+
+    .ai-brand-section .hero-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      font-family: 'Lato', sans-serif;
+    }
+
+    .ai-brand-section .hero-subtitle {
+      font-size: 1.4rem;
+      font-weight: 400;
+      font-family: 'Lato', sans-serif;
+      color: #333;
+    }
+
+    /* Общие настройки */
+    .hero-title {
+      opacity: 0;
+    }
+
+    /* Анимации с разных сторон */
+    @keyframes flyInTop {
+      from {
+        opacity: 0;
+        transform: translateY(-60px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes flyInBottom {
+      from {
+        opacity: 0;
+        transform: translateY(60px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes flyInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-60px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes flyInRight {
+      from {
+        opacity: 0;
+        transform: translateX(60px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    /* Классы для подключения анимации */
+    .hero-title.animate-top {
+      animation: flyInTop 0.8s ease-out forwards;
+    }
+
+    .hero-title.animate-bottom {
+      animation: flyInBottom 0.8s ease-out forwards;
+    }
+
+    .hero-title.animate-left {
+      animation: flyInLeft 0.8s ease-out forwards;
+    }
+
+    .hero-title.animate-right {
+      animation: flyInRight 0.8s ease-out forwards;
+    }
+
+
+
+
+    .icon-line-wrapper.tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px 40px;
+      padding: 40px 20px 30px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .icon-block {
+      width: 90px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .icon-block img {
+      width: 40px;
+      height: auto;
+      margin-bottom: 0.4rem;
+    }
+
+    .icon-block span {
+      font-family: 'Lato', sans-serif;
+      font-size: 0.65rem;
+      line-height: 1.2;
+      color: #111;
+      text-transform: uppercase;
+    }
+
+    .line {
+      display: none;
+    }
+
+    @media (min-width: 768px) {
+      .icon-line-wrapper.tech-stack {
+        flex-wrap: nowrap;
+        gap: 20px;
+      }
+
+      .icon-block {
+        opacity: 0;
+        transform: translateY(10px);
+        transition: all 0.6s ease-in-out;
+      }
+
+      .icon-block.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+
+      .line {
+        display: block;
+        width: 30px;
+        height: 2px;
+        background-color: #999;
+        align-self: center;
+      }
+    }
+
+    .icon-block {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+
+
+
+    @media (max-width: 767px) {
+      .tech-stack-spacer {
+        min-height: 30vh;
+        margin-top: 10vh;
+      }
+
+      .tech-stack-spacer .spacer-title {
+        margin-bottom: 5px;
+      }
+
+      .tech-stack-spacer .icon-line-wrapper {
+        padding-top: 10px;
+        margin-top: 0;
+      }
+    }
+
+    /* Для всех (десктоп + мобайл) */
+    .tech-stack-spacer .spacer-title {
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+      /* можно подправить визуально */
+    }
+
+    .tech-stack-spacer .icon-line-wrapper {
+      margin-top: 0;
+      padding-top: 5px;
+    }
+
+    #sec3 {
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+    }
+
+    #seekbeak-container {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    #seekbeak-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    #seekbeak-cover {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.65);
+      /* можно сделать еще чуть прозрачнее */
+      z-index: 2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    #seekbeak-cover .text-wrapper2 {
+      max-width: 90vw;
+    }
+
+    @media (max-width: 767px) {
+      #seekbeak-cover .hero-title {
+        font-size: 1.6rem;
+      }
+
+      #seekbeak-cover .hero-subtitle {
+        font-size: 1rem;
+      }
+
+      .cta-button {
+        font-size: 1rem;
+        padding: 0.6rem 1.2rem;
+      }
+    }
+
+    .tech-stack-spacer {
+      scroll-margin-top: 100px;
+      /* помогает при якорной навигации */
+      padding-top: 80px;
+    }
+
+    @media (max-width: 767px) {
+      .tech-stack-spacer {
+        padding-top: 80px;
+        min-height: 35vh;
+      }
+    }
+
+    #seekbeak-cover {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.65);
+      /* затемнение поверх картинки */
+      background-blend-mode: darken;
+      z-index: 2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+/* Стили для секции sec2 */
+/* Секция sec2 */
+/* Секция sec2 */
+/* Секция sec2 */
+#sec2 {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Контейнер с изображениями для карусели */
+#sec2 .image-background {
+    display: flex; /* Flexbox для правильного расположения изображений */
+    width: 100%;
+    height: 100%;
+    flex-wrap: nowrap;
+    animation: slide-images 20s linear infinite; /* Анимация движения изображений */
+}
+
+/* Изображения в карусели */
+#sec2 .image-background .background-image {
+    width: 100vw; /* Каждое изображение занимает полный экран по ширине */
+    height: 100vh;
+    object-fit: cover;
+    opacity: 0.8; /* Прозрачность для фона */
+}
+
+/* Анимация для карусели */
+@keyframes slide-images {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%); /* Двигаем изображения на 100% влево */
+    }
+}
+
+/* Оверлей */
+#sec2 .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* затемнение */
+    z-index: 0;
+}
+
+/* Контент */
+#sec2 .content {
+    position: relative;
+    z-index: 1;
+    color: white;
+    text-align: left;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    padding-top: 20vh;
+}
+
+#sec2 .text-wrapper2 {
+    max-width: 70%;
+}
+
+#sec2 .hero-title {
+    font-size: 2.5rem;
+    font-family: 'Staatliches', sans-serif;
+    margin-bottom: 10px;
+}
+
+#sec2 .hero-subtitle {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 20px;
+}
+
+#sec2 .cta-button {
+    padding: 12px 32px;
+    font-size: 1.2rem;
+    background-color: #00e2ff;
+    color: white;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#sec2 .cta-button:hover {
+    background-color: #008f94;
+}
+
+
+
+  #seekbeak-container {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f8cfff;
+  }
+
+  .text-wrapper2 {
+    margin-bottom: 20px;
+    padding-top: 20px;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+    font-family: 'Staatliches', sans-serif;
+    color: #333;
+    margin-bottom: 10px;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+    color: #888;
+    margin-bottom: 20px;
+  }
+
+  .cta-button {
+    padding: 12px 32px;
+    font-size: 1.2rem;
+    background-color: #00e2ff;
+    color: white;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .cta-button:hover {
+    background-color: #008f94;
+  }
+
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding-top: 30px;
+  }
+
+  .gallery img {
+    width: 200px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  @media (max-width: 767px) {
+    .gallery img {
+      width: 45%;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .gallery img {
+      width: 30%;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .gallery img {
+      width: 22%;
+    }
+  }
+
+
+
+
+
+    
+  </style>
+
+
+
+  <header>
+    <div class="site-title-wrapper">
+      <div class="site-title">TKD</div>
+      <div class="site-subtitle">Fitness Manager</div>
+    </div>
+
+    
+  </header>
+
+
+
+
+
+
+<body>
+
+  <script async src="https://cdn.rvtr.ai/projects/683849c7e1960ae001000174/683849c7e1960ae001000176.js"></script>
+
+
+
+  <!-- Cookie Settings Modal -->
+  <div id="cookie-modal" class="cookie-modal">
+    <div class="cookie-modal-content">
+      <h2>Cookie Preferences</h2>
+      <p class="modal-desc">
+        Select which types of cookies you want to allow. You can update these preferences at any time.
+      </p>
+
+      <div class="cookie-option">
+        <label>
+          <input type="checkbox" checked disabled />
+          <strong>Essential Cookies</strong><br>
+          These cookies are necessary for the website to function and cannot be disabled.
+        </label>
+      </div>
+
+      <div class="cookie-option">
+        <label>
+          <input type="checkbox" id="analytics-cookies" />
+          <strong>Analytics Cookies</strong><br>
+          Help us understand how visitors interact with our platform to improve performance.
+        </label>
+      </div>
+
+      <div class="cookie-option">
+        <label>
+          <input type="checkbox" id="ads-cookies" />
+          <strong>Marketing Cookies</strong><br>
+          Used to deliver relevant content and measure engagement across platforms.
+        </label>
+      </div>
+
+      <div class="modal-buttons">
+        <button id="save-settings" class="save-btn">Save Preferences</button>
+        <button id="cancel-settings" class="cancel-btn">Cancel</button>
+      </div>
+    </div>
+  </div>
+  <div id="cookie-overlay"></div>
+
+
+
+
+
+
+
+
+  <div id="lang-toggle">EN</div>
+  <section id="hero">
+    <video class="video-bg" autoplay muted loop playsinline poster="img/fallback7.jpg">
+      <source src="img/screen8.mp4" type="video/mp4">
+      <img src="img/fallback8.png" alt="Loading preview" style="width: 100%; height: auto;">
+    </video>
+
+    <div class="overlay"></div>
+    <div class="content">
+      <!-- Логотип отдельно, с отступом сверху -->
+      <div class="logo-container" style="
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 15vh;
+    margin-bottom: 30px;
+  ">
+        <img src="img/lg.png" alt="3DNA Logo" class="logo" />
+      </div>
+
+      <!-- Текст и кнопка — НЕ зависят от логотипа -->
+      <div class="text-wrapper" style="
+  margin-left: 5vw;
+  text-align: left;
+  max-width: 90vw;
+  margin-top: 12vh;
+  position: relative; /* обязательно для .footnote */
+">
+        <h1 class="hero-title">
+          Soluciones integrales para gimnasios llave en mano
+        </h1>
+
+        <p class="hero-subtitle">
+          <span id="rotating-text" class="fade">Equipamiento — suministro e instalación de máquinas de ejercicio, mobiliario deportivo y accesorios funcionales para todas las áreas del club.</span>
+        </p>
+
+        <button class="cta-button open-panel">empezar ahora</button>
+
+        <div class="footnote-block">
+  <p class="footnote">
+    * TKD Fitness Manager apoya iniciativas deportivas, educativas y de bienestar social.  
+    Pregúntanos por soluciones personalizadas para tu proyecto.
+  </p>
+  <p class="footnote">
+    * Sistema completo de conversión (Diseño → Equipamiento → Software → Lanzamiento) desde <strong>49 000 €</strong>.  
+    Consulta detalles en nuestro <a href="#modal-oferta" class="open-oferta">Acuerdo de Servicio Público</a>.
+  </p>
+</div>
+
+
+      </div>
+
+
+
+
+
+  </section>
+
+
+
+
+  <div class="spacer">
+  <div class="spacer-inner">
+    <h2 class="spacer-title">CÓMO TRABAJAMOS</h2>
+    <div class="icon-line-wrapper">
+      <div class="icon-block">
+        <img src="img/icon1.png" alt="Diseño">
+        <span>DISEÑO</span>
+      </div>
+      <div class="line"></div>
+      <div class="icon-block">
+        <img src="img/icon2.png" alt="Equipamiento">
+        <span>EQUIPAMIENTO</span>
+      </div>
+      <div class="line"></div>
+      <div class="icon-block">
+        <img src="img/icon3.png" alt="Lanzamiento">
+        <span>LANZAMIENTO</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+  <section id="sec2">
+    <video class="video-bg" autoplay muted loop playsinline poster="img/fallback7.jpg">
+      <source src="img/screen7.mp4" type="video/mp4">
+      <img src="img/fallback7.png" alt="Loading preview" style="width: 100%; height: auto;">
+    </video>
+
+    <div class="overlay"></div>
+
+    <div class="content">
+      <!-- Имитация отступа как у логотипа -->
+      <div style="height: 15vh; margin-bottom: 30px;"></div>
+
+      <!-- Текст и кнопка выровнены по левому краю -->
+      <div class="text-wrapper2">
+        <h1 class="hero-title">Diseñamos tu espacio. Activamos tu marca.</h1>
+        <p class="hero-subtitle">
+          <span id="rotating-text-sec2" class="fade">Virtual Environments Powered by AI</span>
+        </p>
+        <button class="cta-button" onclick="alert('Entering the AI showroom...')">
+          ENTER AI SHOWROOM
+        </button>
+
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <div class="spacer">
+    
+  </div>
+
+
+
+
+
+
+
+
+ <section id="sec3">
+  <div id="seekbeak-container">
+    <!-- Background cover with SeekBeak -->
+    <div class="text-wrapper2">
+      <h1 class="hero-title">TAILORED DIGITAL EXPERIENCES</h1>
+      <p class="hero-subtitle">
+        <span id="rotating-text-sec2" class="fade">Virtual Environments Powered by AI</span>
+      </p>
+      <button class="cta-button" onclick="showSeekBeak()">ENTER AI SHOWROOM</button>
+    </div>
+
+    <!-- Image gallery placed below text -->
+    <div class="gallery">
+      <img src="img/f1.jpg" alt="Image 1">
+      <img src="img/f2.jpg" alt="Image 2">
+      <img src="img/f3.jpg" alt="Image 3">
+      <img src="img/f4.jpg" alt="Image 4">
+      <img src="img/f5.jpg" alt="Image 5">
+      <img src="img/f6.jpg" alt="Image 6">
+      <img src="img/f7.jpg" alt="Image 7">
+      <img src="img/f8.jpg" alt="Image 8">
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+
+
+
+  
+
+
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+ 
+
+
+  
+
+
+
+
+ 
+
+
+  
+
+
+
+
+
+
+  <!-- Политика Cookies — модальное окно -->
+  <div id="cookies-policy-modal" class="modal">
+    <div class="modal-content">
+      <h2>Cookie Policy</h2>
+      <div class="modal-scroll">
+        <p>
+          At <strong>ISHAREAI</strong>, we use cookies to enhance your experience, improve our services, and deliver
+          personalized content.<br><br>
+
+          <strong>What are cookies?</strong><br>
+          Cookies are small text files stored on your device when you visit a website. They help remember your
+          preferences, active sessions, and usage patterns to personalize and optimize your interaction with our
+          platform.<br><br>
+
+          <strong>What types of cookies do we use?</strong><br>
+          – <strong>Essential cookies:</strong> Required for core website functionality. These cannot be disabled.<br>
+          – <strong>Analytics cookies:</strong> Help us understand how users interact with the site (e.g., via Google
+          Analytics).<br>
+          – <strong>Marketing cookies:</strong> Enable us to show relevant content and measure performance across
+          channels.<br><br>
+
+          <strong>How can you manage cookies?</strong><br>
+          You can accept or reject cookies using our consent banner or manage your preferences manually. You may also
+          configure your browser to block or automatically delete cookies.<br><br>
+
+          <strong>Changing your preferences</strong><br>
+          You can update your cookie preferences at any time by reopening the cookie settings menu. You can also clear
+          local storage via your browser tools.<br><br>
+
+          For more information, contact us at <a href="mailto:contact@ishareai.tech">contact@ishareai.tech</a>.
+        </p>
+      </div>
+      <div style="text-align: right; margin-top: 15px;">
+        <button id="close-policy-modal" style="padding: 10px 20px;">Close</button>
+      </div>
+    </div>
+  </div>
+
+
+
+<!-- Модальное окно политики -->
+<div id="policy-modal" class="modal" style="display: none;">
+  <div class="modal-content">
+    <button class="modal-close" onclick="document.getElementById('policy-modal').style.display='none'">&times;</button>
+    <h2>Política de Privacidad</h2>
+    <p style="font-size: 0.9rem; line-height: 1.5;">
+      En TKD Fitness Manager tratamos tus datos personales con total responsabilidad.  
+      Solo usamos tu información para contactarte y ayudarte con tu proyecto.  
+      Nunca vendemos ni compartimos tus datos con terceros sin tu consentimiento.
+      <br><br>
+      Puedes solicitar la eliminación de tus datos en cualquier momento escribiendo a  
+      <a href="mailto:contacto@tkdfitness.com">contacto@tkdfitness.com</a>.
+    </p>
+  </div>
+</div>
+
+
+
+
+
+
+  <div class="spacer"></div>
+
+
+
+
+
+
+
+
+
+
+  <div class="footer">
+    <p>📍 Spain · ✉️ <a href="mailto:andrei@ishareai.tech">andrei@ishareai.tech</a> · 🌐 www.ishareai.tech</p>
+  </div>
+
+
+  <!-- Затемнение фона -->
+  <div id="panel-backdrop"></div>
+
+  <!-- Выезжающая панель -->
+  <div id="side-panel">
+    <button id="close-panel">&times;</button>
+
+    <div class="side-content">
+      <div class="form-intro">
+
+        <h2>Haz crecer tu club con diseño inteligente y tecnología integrada</h2>
+</div>
+
+<p>Hoy en día, toda marca fitness empieza con una pregunta clave:  
+¿Cómo conectamos con las personas — de forma inmediata, emocional y a escala?</p>
+
+<p><strong>TKD Fitness Manager</strong> es una plataforma de nueva generación que da vida a tu club a través de soluciones profesionales.  
+Simplificamos la gestión, aumentamos la conversión y generamos confianza desde el primer contacto.</p>
+
+<p>Los espacios estáticos no inspiran.  
+Las soluciones genéricas no conectan.  
+TKD transforma tu club en una experiencia activa, personalizada y siempre disponible.</p>
+
+<h3>Servicios clave</h3>
+<ul>
+  <li><strong>Diseño de espacios</strong> — arquitectura funcional, estilo de marca y recorrido del usuario</li>
+  <li><strong>Equipamiento inteligente</strong> — planificación, entrega e instalación profesional</li>
+  <li><strong>Personalización total</strong> — estilo, iluminación, flujos y branding a medida</li>
+  <li><strong>Datos e insights</strong> — mapas de calor y métricas para decisiones efectivas</li>
+  <li><strong>Pagos seguros</strong> — Stripe, criptomonedas, suscripciones — todo listo para usar</li>
+  <li><strong>Plug & Play</strong> — se integra con tu sistema actual: Shopify, Webflow o plataformas personalizadas</li>
+</ul>
+
+<h3>¿Por qué las marcas eligen TKD?</h3>
+<ul>
+  <li><strong>Hasta un 60 % más de conversión</strong> con entornos inmersivos y personalizados</li>
+  <li><strong>Confianza inmediata</strong> mediante espacios reales, funcionales y con identidad</li>
+  <li><strong>Escalabilidad sin límites</strong> — desde 10 hasta 10.000 socios, sin personal adicional</li>
+  <li><strong>Diseño móvil, velocidad superior</strong> y consistencia de marca en todos los canales</li>
+  <li><strong>Implementación sin código</strong> — lanza tu club en cuestión de días</li>
+</ul>
+
+<h3>Nuestras tecnologías</h3>
+<ul>
+  <li><strong>Frontend</strong> — HTML5, TailwindCSS, Vanilla JS, React</li>
+  <li><strong>Visualización 3D</strong> — Unreal Engine, Rhino 3D, D-ID, renders inmersivos</li>
+  <li><strong>Sistemas de gestión</strong> — CRM, integraciones API, automatización de procesos</li>
+  <li><strong>Calendarios de reserva</strong> — gestión online de clases, zonas y entrenamientos</li>
+  <li><strong>Acceso 24/7</strong> — control inteligente de acceso, llaves digitales y seguridad</li>
+  <li><strong>Interfaces móviles</strong> — diseño adaptado a smartphones y tablets</li>
+  <li><strong>Ambiente sonoro</strong> — música automatizada y escenarios de audio personalizados</li>
+  <li><strong>Alojamiento y despliegue</strong> — Vercel, Netlify, GitHub Pages, servidores locales</li>
+  <li><strong>Pagos en línea</strong> — Stripe, PayPal, tarjetas bancarias y criptomonedas</li>
+  <li><strong>Suscripciones y membresías</strong> — gestión de tarifas, acceso y renovaciones</li>
+  <li><strong>Analítica</strong> — Hotjar, Plausible, Segment, mapas de calor y comportamiento</li>
+  <li><strong>Integraciones</strong> — Shopify, Webflow, Notion, Airtable, WhatsApp, Telegram</li>
+</ul>
+
+
+<p>TKD se encuentra en la intersección entre diseño, operaciones y tecnología.  
+Transforma cómo se ve tu club — y cómo responde tu comunidad.</p>
+
+<p><strong>Tu espacio ahora está vivo.  
+Tu cliente ya no está solo.  
+TKD habla por tu marca.</strong></p>
+
+
+
+      <div class="sticky-header">
+        <div class="form-intro">
+          <h2>Todo comienza con un solo clic — responde unas preguntas y te entregamos tu club llave en mano.</h2>
+        </div>
+        <div class="progress-wrapper">
+          <div class="progress-text" id="progress-text">0% completed</div>
+          <div class="progress-container">
+            <div class="progress-bar" id="progress-bar"></div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <!-- Section 1 -->
+        <!-- Section 1 -->
+<div class="form-section">
+  <h3>¿Por dónde empezamos? Cuéntanos sobre tu proyecto:</h3>
+  <div class="form-grid">
+    <label>
+      <input type="radio" name="project_goal" value="new_club"> Crear un gimnasio desde cero
+    </label>
+    <label>
+      <input type="radio" name="project_goal" value="renovate_club"> Renovar o reestructurar un club existente
+    </label>
+    <label>
+      <input type="radio" name="project_goal" value="scale_franchise"> Escalar o lanzar una franquicia
+    </label>
+    <label>
+      <input type="radio" name="project_goal" value="digital_only"> Solo sistema digital (reservas, acceso 24/7)
+    </label>
+    <label>
+      <input type="radio" name="project_goal" value="otro" id="otroRadio"> Otro
+    </label>
+
+    <div id="otroInputWrapper" style="display: none; margin-top: 10px;">
+      <input type="text" name="project_goal_otro" placeholder="Describe tu necesidad"
+             style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #ccc;">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+        <!-- Section 2 -->
+        <!-- Section 2 -->
+<div class="form-section">
+  <h3>¿Cuántos metros cuadrados tienes disponibles?</h3>
+  <div class="form-grid">
+    <label>
+      <input type="radio" name="area_disponible" value="menos_50"> Menos de 50 m²
+    </label>
+    <label>
+      <input type="radio" name="area_disponible" value="50_100"> 50–100 m²
+    </label>
+    <label>
+      <input type="radio" name="area_disponible" value="100_200"> 100–200 m²
+    </label>
+    <label>
+      <input type="radio" name="area_disponible" value="200_500"> 200–500 m²
+    </label>
+    <label>
+      <input type="radio" name="area_disponible" value="mas_500"> Más de 500 m²
+    </label>
+    <label>
+      <input type="radio" name="area_disponible" value="otro" id="areaOtroRadio"> Otro
+    </label>
+
+    <div id="areaOtroInputWrapper" style="display: none; margin-top: 10px;">
+      <input type="text" name="area_disponible_otro" placeholder="Especifica tu superficie"
+             style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #ccc;">
+    </div>
+  </div>
+</div>
+
+
+
+        <!-- Секция 3 -->
+        <!-- Section 3 -->
+<div class="form-section">
+  <h3>¿Qué tecnologías y sistemas digitales necesitas?</h3>
+  <div class="form-grid">
+    <label><input type="checkbox" name="tecnologia" value="acceso_24_7"> Acceso 24/7 con control inteligente</label>
+    <label><input type="checkbox" name="tecnologia" value="reservas_online"> Sistema de reservas online</label>
+    <label><input type="checkbox" name="tecnologia" value="pagos_online"> Pagos digitales integrados</label>
+    <label><input type="checkbox" name="tecnologia" value="web"> Página web o landing profesional</label>
+    <label><input type="checkbox" name="tecnologia" value="publicidad_digital"> Publicidad en redes y Google</label>
+    <label><input type="checkbox" name="tecnologia" value="chatbot"> Chatbot de atención y ventas</label>
+    <label><input type="checkbox" name="tecnologia" value="app_cliente"> App para clientes y fidelización</label>
+    <label><input type="checkbox" name="tecnologia" value="pantallas_info"> Pantallas informativas en el club</label>
+    <label><input type="checkbox" name="tecnologia" value="crm"> CRM para gestión de clientes</label>
+    <label><input type="checkbox" name="tecnologia" value="analytics"> Estadísticas y análisis de rendimiento</label>
+    <label><input type="checkbox" name="tecnologia" value="seguridad"> Sistema de seguridad y videovigilancia</label>
+<label><input type="checkbox" name="tecnologia" value="musica"> Sistema de sonido / música ambiental</label>
+<label><input type="checkbox" name="tecnologia" value="video_publicidad"> Pantallas para video, publicidad y contenido</label>
+
+    <label><input type="checkbox" id="tecnologiaOtroCheckbox" name="tecnologia" value="otro"> Otro</label>
+    <div id="tecnologiaOtroInputWrapper" style="display: none; margin-top: 10px;">
+      <input type="text" name="tecnologia_otro" placeholder="Describe tu necesidad"
+             style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #ccc;">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+        <!-- Секция 4 -->
+        <!-- Section 4 -->
+<div class="form-section">
+  <h3>¿Qué áreas necesitas equipar o diseñar?</h3>
+  <div class="form-grid">
+    <label><input type="checkbox" name="areas" value="sala_entrenamiento"> Sala de entrenamiento / musculación</label>
+    <label><input type="checkbox" name="areas" value="zona_cardio"> Zona de cardio</label>
+    <label><input type="checkbox" name="areas" value="zona_funcional"> Zona funcional o cross-training</label>
+    <label><input type="checkbox" name="areas" value="sala_clases"> Sala de clases dirigidas</label>
+    <label><input type="checkbox" name="areas" value="vestuarios"> Vestuarios y duchas</label>
+    <label><input type="checkbox" name="areas" value="recepcion"> Recepción y zona de bienvenida</label>
+    <label><input type="checkbox" name="areas" value="coworking"> Espacio de coworking o relax</label>
+    <label><input type="checkbox" name="areas" value="almacen"> Almacén o zona técnica</label>
+    <label><input type="checkbox" name="areas" value="zona_artes_marciales"> Zona de artes marciales</label>
+    <label><input type="checkbox" name="areas" value="fachada"> Fachada y acceso principal</label>
+
+    
+    <label><input type="checkbox" id="areaOtroCheckbox" name="areas" value="otro"> Otro</label>
+    <div id="areaOtroInputWrapper" style="display: none; margin-top: 10px;">
+      <input type="text" name="areas_otro" placeholder="Describe otra área"
+             style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #ccc;">
+    </div>
+  </div>
+</div>
+
+
+
+        <!-- Секция 5 -->
+        <!-- Section 5 -->
+<div class="form-section">
+  <h3>¿En qué etapa se encuentra tu proyecto?</h3>
+  <div class="form-grid">
+    <label><input type="radio" name="etapa" value="idea"> Solo es una idea por ahora</label>
+    <label><input type="radio" name="etapa" value="buscando_local"> Buscando local / ubicación</label>
+    <label><input type="radio" name="etapa" value="tengo_local"> Ya tengo el local / espacio</label>
+    <label><input type="radio" name="etapa" value="en_obra"> En obra o remodelación</label>
+    <label><input type="radio" name="etapa" value="listo_lanzar"> Todo listo, quiero lanzar pronto</label>
+    <label><input type="radio" name="etapa" value="otro" id="etapaOtroCheckbox"> Otro</label>
+    <div id="etapaOtroInputWrapper" style="display: none; margin-top: 10px;">
+      <input type="text" name="etapa_otro" placeholder="Describe tu situación actual"
+             style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #ccc;">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+        <!-- Секция 6 -->
+        <h3>¿Cuál es tu presupuesto estimado?</h3>
+<div class="form-grid">
+  <label><input type="radio" name="presupuesto" value="menos_10000"> Menos de 10.000 €</label>
+  <label><input type="radio" name="presupuesto" value="10000_25000"> Entre 10.000 € y 25.000 €</label>
+  <label><input type="radio" name="presupuesto" value="25000_50000"> Entre 25.000 € y 50.000 €</label>
+  <label><input type="radio" name="presupuesto" value="mas_50000"> Más de 50.000 €</label>
+</div>
+
+
+
+
+        <!-- Секция 7 -->
+        <h3>¿Para cuándo deseas tener el club operativo?</h3>
+<div class="form-grid">
+  <label><input type="radio" name="plazo" value="inmediato"> Lo antes posible</label>
+  <label><input type="radio" name="plazo" value="1_3_meses"> En 1–3 meses</label>
+  <label><input type="radio" name="plazo" value="3_6_meses"> En 3–6 meses</label>
+  <label><input type="radio" name="plazo" value="sin_fecha"> Aún sin fecha definida</label>
+</div>
+
+
+<!-- Final Section — Contacto -->
+<!-- Final Section — Contacto -->
+<div class="form-section" id="contact-section">
+  <h3>Último paso: ¿Cómo podemos contactarte?</h3>
+  <form id="tkdForm">
+  <input type="text" name="nombre" id="nombre" required>
+  <input type="email" name="email" id="email" required>
+  <input type="tel" name="telefono" id="telefono">
+  <input type="hidden" name="uid" id="uid">
+ 
+  <button type="submit">Enviar</button>
+</form>
+<p id="form-status"></p>
+
+    <!-- UID escondido -->
+    <input type="hidden" name="uid" id="uid">
+
+    <!-- Checkbox de consentimiento -->
+    <!-- Checkbox de consentimiento -->
+<div style="margin-top: 15px; display: flex; align-items: flex-start;">
+  <input type="checkbox" id="consentimiento" required style="margin-top: 3px; margin-right: 10px; transform: scale(1.2);">
+  <label for="consentimiento" style="font-size: 0.85rem; font-family: 'Lato', sans-serif;">
+    Acepto el tratamiento de mis datos personales conforme a la <a href="#politica" id="open-policy">Política de Privacidad</a>.
+  </label>
+</div>
+
+
+    
+  </form>
+</div>
+
+
+
+        
+
+
+
+
+        <!-- Modal: Public Offer Contract -->
+        <div id="modal-oferta" class="modal-oferta" style="display: none;">
+          <div class="modal-content" style="overflow-y: auto; max-height: 90vh; padding: 1rem;">
+            <button id="close-oferta" class="modal-close"
+              style="position: absolute; top: 1rem; right: 1rem;">&times;</button>
+            <h2>Public Offer Contract</h2>
+            <p><strong>Version:</strong> 1.0 | <strong>Effective Date:</strong> [dd/mm/yyyy]</p>
+
+            <h3>1. Purpose of the Contract</h3>
+            <p>This document constitutes a legally binding Public Offer issued by the owner of an automated AI-based
+              digital service (hereinafter, “the Provider”). It defines the conditions for the use of intelligent avatar
+              technologies, voice-driven interfaces, and related modules offered through the ISHAREAI platform.</p>
+            <p>By accessing and using any part of the system, the User confirms their acceptance of the terms and legal
+              provisions described herein.</p>
+
+            <h3>2. Service Description</h3>
+            <ul>
+              <li>The Provider offers intelligent AI-driven virtual agents (avatars) capable of real-time interaction,
+                voice synthesis, and logic-based response flows.</li>
+              <li>These services are designed for use in marketing, customer communication, education, assistance, and
+                other human-machine interface purposes.</li>
+              <li>The system operates via cloud infrastructure and may include frontend widgets, backend APIs, and
+                integration with third-party platforms.</li>
+              <li>Access may be granted under free, trial, beta, or subscription terms, depending on the agreement.</li>
+            </ul>
+
+            <h3>3. Functional Integrity</h3>
+            <ul>
+              <li>The Provider guarantees that all core systems have been tested and maintained under standard
+                operational conditions.</li>
+              <li>Any issues caused by third-party integrations (such as hosting, TTS/LLM APIs, or browser
+                incompatibilities) are beyond the Provider’s scope of liability.</li>
+              <li>Continuous access is not guaranteed in the event of force majeure, misuse, or legal restrictions.</li>
+            </ul>
+
+            <h3>4. User Responsibility</h3>
+            <ul>
+              <li>The User is solely responsible for any content uploaded, shared, or generated using the platform,
+                including visual, verbal, or behavioral output of the AI avatar.</li>
+              <li>The User must comply with all applicable laws in their jurisdiction, especially concerning privacy,
+                personal data, and content regulation.</li>
+              <li>The Provider reserves the right to suspend access in case of abuse, illegal use, or violation of
+                ethical guidelines.</li>
+            </ul>
+
+            <h3>5. Limitation of Liability</h3>
+            <p><strong>The Provider is not liable for:</strong></p>
+            <ul>
+              <li>Any financial loss, business interruption, or reputational damage resulting from the use or failure of
+                the system.</li>
+              <li>Legal issues arising from misuse of AI-generated voice, image, or behavior.</li>
+              <li>External downtime, including outages caused by cloud, CDN, API, or AI model providers.</li>
+            </ul>
+
+            <h3>6. Intellectual Property</h3>
+            <ul>
+              <li>All AI modules, avatars, models, voice systems, and codebases are proprietary to the Provider or its
+                licensed partners.</li>
+              <li>The User is granted a non-exclusive, non-transferable, and revocable license to use the system
+                strictly for intended and lawful purposes.</li>
+            </ul>
+
+            <h3>7. Term and Termination</h3>
+            <ul>
+              <li>This contract becomes effective upon the User's first interaction with the system.</li>
+              <li>It remains in effect unless explicitly revoked by either party or due to non-compliance with the Terms
+                of Use.</li>
+              <li>The Provider may terminate or suspend access at any time without prior notice.</li>
+            </ul>
+
+            <h3>8. Governing Law and Jurisdiction</h3>
+            <p>This contract is governed by the laws of Canada. Any disputes shall be subject to the jurisdiction of the
+              courts of the Province of Ontario, unless otherwise required by applicable Canadian federal law.</p>
+
+            <h3>9. Final Provisions</h3>
+            <ul>
+              <li>This agreement may be revised at any time. Users are encouraged to review it regularly.</li>
+              <li>In case of translation discrepancies, the English version shall prevail.</li>
+            </ul>
+
+
+
+            <hr style="margin: 2rem 0;">
+
+
+
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+        <script>
+          // Переключение языка
+          const toggle = document.getElementById('lang-toggle');
+          const es = document.querySelectorAll('.lang-es');
+          const en = document.querySelectorAll('.lang-en');
+          let lang = 'es';
+          toggle.onclick = () => {
+            lang = lang === 'es' ? 'en' : 'es';
+            toggle.innerText = lang.toUpperCase() === 'ES' ? 'EN' : 'ES';
+            es.forEach(e => e.style.display = lang === 'es' ? 'block' : 'none');
+            en.forEach(e => e.style.display = lang === 'en' ? 'block' : 'none');
+          };
+
+         const phrases = [
+  "🏋️ Equipamiento funcional y profesional del club",
+  "🔧 Instalación de máquinas y mobiliario deportivo",
+  "🕒 Acceso inteligente 24/7 sin interrupciones",
+  "🛡️ Control de entrada moderno y seguro",
+  "🎨 Diseño visual atractivo y coherente",
+  "🛋️ Interiores personalizados y señalización clara",
+  "💳 Pago online rápido y seguro",
+  "📅 Reservas online de servicios y clases",
+  "📦 Franquicia lista para escalar rápido",
+  "📈 Modelo de negocio escalable y estructurado",
+  "💰 Optimización de costes y rentabilidad alta",
+  "🚀 Rentabilidad desde la primera fase",
+  "📐 Proyecto arquitectónico completo del club",
+  "📊 Planificación eficiente de todos los espacios",
+  "💡 Iluminación profesional y eficiente en energía",
+  "🔆 Ambiente seguro con iluminación estratégica"
+];
+
+
+
+          let current = 0;
+          const el = document.getElementById("rotating-text");
+
+          setInterval(() => {
+            el.classList.add("fade-out");
+            setTimeout(() => {
+              current = (current + 1) % phrases.length;
+              el.textContent = phrases[current];
+              el.classList.remove("fade-out");
+            }, 600);
+          }, 3500);
+
+          // Section #sec2 — ISHAREAI immersive experience phrases (English)
+          const phrasesSec2 = [
+  "Experiencias digitales con enfoque en diseño",
+  "Visuales que detienen el scroll",
+  "Espacios pensados para compartir",
+  "Mundos de marca con impacto estético",
+  "Entornos listos para Instagram",
+  "Narrativa visual en cada píxel"
+];
+
+
+
+          let currentSec2 = 0;
+          const elSec2 = document.getElementById("rotating-text-sec2");
+
+          setInterval(() => {
+            elSec2.classList.add("fade-out");
+            setTimeout(() => {
+              currentSec2 = (currentSec2 + 1) % phrasesSec2.length;
+              elSec2.textContent = phrasesSec2[currentSec2];
+              elSec2.classList.remove("fade-out");
+            }, 600);
+          }, 3500);
+
+
+
+
+          document.addEventListener("DOMContentLoaded", () => {
+            const panel = document.getElementById('side-panel');
+            const closeBtn = document.getElementById('close-panel');
+            const backdrop = document.getElementById('panel-backdrop');
+
+            document.querySelectorAll('.open-panel').forEach(btn => {
+              btn.addEventListener('click', function (e) {
+                e.preventDefault();
+                panel.classList.add('open');
+                backdrop.classList.add('visible');
+                document.body.classList.add('modal-open'); // ⬅️ блокируем фон
+              });
+            });
+
+            function closePanel() {
+              panel.classList.remove('open');
+              backdrop.classList.remove('visible');
+              document.body.classList.remove('modal-open'); // ⬅️ возвращаем прокрутку
+            }
+
+            closeBtn.addEventListener('click', closePanel);
+            backdrop.addEventListener('click', closePanel);
+          });
+
+
+          document.addEventListener("DOMContentLoaded", () => {
+            const banner = document.getElementById('cookie-banner');
+            const modal = document.getElementById('cookie-modal');
+            const overlay = document.getElementById('cookie-overlay');
+
+            const accept = document.getElementById('accept-cookies');
+            const config = document.getElementById('config-cookies');
+            const reject = document.getElementById('reject-cookies');
+
+            const save = document.getElementById('save-settings');
+            const cancel = document.getElementById('cancel-settings');
+
+            // Show banner if not decided yet
+            if (!localStorage.getItem('cookiesDecision')) {
+              banner.classList.add('show');
+            }
+
+            accept.onclick = () => {
+              localStorage.setItem('cookiesDecision', JSON.stringify({
+                necessary: true,
+                analytics: true,
+                ads: true
+              }));
+              banner.classList.remove('show');
+            };
+
+            reject.onclick = () => {
+              localStorage.setItem('cookiesDecision', JSON.stringify({
+                necessary: true,
+                analytics: false,
+                ads: false
+              }));
+              banner.classList.remove('show');
+            };
+
+            config.onclick = () => {
+              modal.classList.add('show');
+              overlay.classList.add('show');
+            };
+
+            cancel.onclick = () => {
+              modal.classList.remove('show');
+              overlay.classList.remove('show');
+            };
+
+            save.onclick = () => {
+              const analytics = document.getElementById('analytics-cookies').checked;
+              const ads = document.getElementById('ads-cookies').checked;
+
+              localStorage.setItem('cookiesDecision', JSON.stringify({
+                necessary: true,
+                analytics: analytics,
+                ads: ads
+              }));
+
+              modal.classList.remove('show');
+              overlay.classList.remove('show');
+              banner.classList.remove('show');
+            };
+          });
+
+          // Открытие модального окна политики cookies
+          document.querySelectorAll('a[href="#politica-cookies"]').forEach(link => {
+            link.addEventListener('click', (e) => {
+              e.preventDefault();
+              document.getElementById('cookies-policy-modal').style.display = 'flex';
+            });
+          });
+
+          // Закрытие окна
+          document.getElementById('close-policy-modal').addEventListener('click', () => {
+            document.getElementById('cookies-policy-modal').style.display = 'none';
+          });
+
+
+
+
+
+          function loadGoogleAnalytics() {
+            const script = document.createElement('script');
+            script.async = true;
+            script.src = 'https://www.googletagmanager.com/gtag/js?id=G-QGGREKNJDX';
+            document.head.appendChild(script);
+
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'G-QGGREKNJDX');
+          }
+
+          // Загружаем только если пользователь согласен
+          document.addEventListener("DOMContentLoaded", () => {
+            const consent = JSON.parse(localStorage.getItem('cookiesDecision'));
+            if (consent && consent.analytics) {
+              loadGoogleAnalytics();
+            }
+          });
+          document.addEventListener('DOMContentLoaded', () => {
+            const ofertaLinks = document.querySelectorAll('.open-oferta');
+            const modalOferta = document.getElementById('modal-oferta');
+            const closeOferta = document.getElementById('close-oferta');
+
+            ofertaLinks.forEach(link => {
+              link.addEventListener('click', e => {
+                e.preventDefault();
+                modalOferta.style.display = 'flex';
+              });
+            });
+
+            closeOferta.addEventListener('click', () => {
+              modalOferta.style.display = 'none';
+            });
+
+            // Закрытие по клику вне окна
+            modalOferta.addEventListener('click', (e) => {
+              if (e.target === modalOferta) {
+                modalOferta.style.display = 'none';
+              }
+            });
+          });
+
+          
+          
+          
+          
+          function updateStepProgress() {
+  const sections = document.querySelectorAll('.form-section');
+  let completed = 0;
+
+  sections.forEach(section => {
+    const radios = section.querySelectorAll('input[type="radio"]');
+    const checkboxes = section.querySelectorAll('input[type="checkbox"]');
+    const texts = section.querySelectorAll('input[type="text"], input[type="number"]');
+
+    const radioChecked = [...radios].some(r => r.checked);
+    const checkboxChecked = [...checkboxes].some(c => c.checked);
+    const textFilled = [...texts].some(t => t.value.trim() !== '');
+
+    if (radioChecked || checkboxChecked || textFilled) {
+      completed++;
+    }
+  });
+
+  const total = sections.length;
+  const percent = Math.round((completed / total) * 100);
+  document.getElementById('progress-bar').style.width = `${percent}%`;
+  document.getElementById('progress-text').textContent = `${percent}% completado`;
+}
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('input').forEach(input => {
+    input.addEventListener('input', updateStepProgress);
+    input.addEventListener('change', updateStepProgress);
+  });
+
+  updateStepProgress(); // вызвать сразу при загрузке
+});
+
+
+
+
+          document.addEventListener("DOMContentLoaded", () => {
+            updateStepProgress();
+
+            document.querySelectorAll('.form-section input[type="checkbox"]').forEach(cb => {
+              cb.addEventListener('change', updateStepProgress);
+            });
+          });
+
+          document.addEventListener("DOMContentLoaded", function () {
+            const titles = document.querySelectorAll(".hero-title");
+            const directions = ["top", "bottom", "left", "right"];
+
+            const observer = new IntersectionObserver(
+              (entries, observer) => {
+                entries.forEach((entry) => {
+                  if (entry.isIntersecting) {
+                    const dir = directions[Math.floor(Math.random() * directions.length)];
+                    entry.target.classList.add(`animate-${dir}`);
+                    observer.unobserve(entry.target);
+                  }
+                });
+              },
+              { threshold: 0.6 }
+            );
+
+            titles.forEach((title) => observer.observe(title));
+          });
+
+
+
+
+        </script>
+
+        <script>
+          const otroCheckbox = document.getElementById('otroCheckbox');
+          const otroInputWrapper = document.getElementById('otroInputWrapper');
+
+          otroCheckbox.addEventListener('change', function () {
+            if (this.checked) {
+              otroInputWrapper.style.display = 'block';
+            } else {
+              otroInputWrapper.style.display = 'none';
+            }
+          });
+
+
+          document.addEventListener('DOMContentLoaded', () => {
+            const blocks = document.querySelectorAll('.icon-block');
+            const observer = new IntersectionObserver(entries => {
+              entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add('visible');
+                }
+              });
+            }, { threshold: 0.2 });
+
+            blocks.forEach(block => observer.observe(block));
+          });
+
+
+          function showSeekBeak() {
+            document.getElementById('seekbeak-cover').style.display = 'none';
+            document.getElementById('seekbeak-frame-wrapper').style.display = 'block';
+          }
+
+
+
+
+
+
+
+        </script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const otroRadio = document.getElementById('otroRadio');
+    const otroInputWrapper = document.getElementById('otroInputWrapper');
+    const radios = document.querySelectorAll('input[name="project_goal"]');
+
+    radios.forEach(radio => {
+      radio.addEventListener('change', () => {
+        if (otroRadio.checked) {
+          otroInputWrapper.style.display = 'block';
+        } else {
+          otroInputWrapper.style.display = 'none';
+        }
+      });
+    });
+  });
+</script>
+
+<script>
+  const tecnologiaOtroCheckbox = document.getElementById('tecnologiaOtroCheckbox');
+  const tecnologiaOtroInputWrapper = document.getElementById('tecnologiaOtroInputWrapper');
+
+  tecnologiaOtroCheckbox.addEventListener('change', function () {
+    tecnologiaOtroInputWrapper.style.display = this.checked ? 'block' : 'none';
+  });
+</script>
+
+
+
+<script>
+  document.getElementById('open-policy').addEventListener('click', function (e) {
+    e.preventDefault();
+    document.getElementById('policy-modal').style.display = 'flex';
+  });
+</script>
+
+<script>
+document.getElementById("tkdForm").addEventListener("submit", function (e) {
+  e.preventDefault(); // Отменяет стандартное поведение отправки формы
+
+  const nombre = document.getElementById("nombre").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const telefono = document.getElementById("telefono").value.trim();
+  const consentimiento = document.getElementById("consentimiento").checked;
+  const status = document.getElementById("form-status");
+
+  // Проверяем, что имя и email введены
+  if (!nombre || !email) {
+    status.style.color = "red";
+    status.textContent = "Por favor, completa tu nombre y correo electrónico.";
+    return;
+  }
+
+  // Проверяем согласие на обработку данных
+  if (!consentimiento) {
+    status.style.color = "red";
+    status.textContent = "Debes aceptar el tratamiento de datos.";
+    return;
+  }
+
+  const uid = "TKD-" + Date.now();
+  document.getElementById("uid").value = uid;
+
+  // Создаем сообщение для отправки
+  const form = document.getElementById("tkdForm");
+  const formData = new FormData(form);
+  let message = "📝 FORMULARIO COMPLETO:\n\n";
+  for (let [key, value] of formData.entries()) {
+    if (key !== "uid" && key !== "consentimiento") {
+      message += `${key}: ${value}\n`;
+    }
+  }
+
+  const templateParams = {
+    nombre: nombre,
+    email: email,
+    telefono: telefono,
+    uid: uid,
+    time: new Date().toLocaleString(),
+    message: message
+  };
+
+  console.log('Отправка формы с параметрами:', templateParams); // Отладочная информация
+
+  status.style.color = "black";
+  status.textContent = "Enviando...";
+
+  // Отправляем форму через EmailJS
+  emailjs.send("service_2wytdr7", "template_ik794vx", templateParams)
+    .then(() => {
+      status.style.color = "green";
+      status.textContent = "¡Solicitud enviada con éxito!";
+      form.reset(); // Сбрасываем форму
+    })
+    .catch(error => {
+      status.style.color = "red";
+      status.textContent = "Error al enviar. Intenta de nuevo.";
+      console.error("EmailJS error:", error); // Выводим ошибку в консоль
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  (function(){
+  emailjs.init("rkyiXfUOniu_S3ajn"); // Ваш публичный ключ
+})();
+
+</script>
+
+
+
+</body>
+
+</html>
